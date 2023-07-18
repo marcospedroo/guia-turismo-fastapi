@@ -36,7 +36,7 @@ class PontoTuristicoRotas:
             '/local/{nome_local}',
             self.delete_ponto_turistico,
             methods=['DELETE'],
-            status_code=204
+            status_code=204,
         )
 
     def get_ponto_turistico(

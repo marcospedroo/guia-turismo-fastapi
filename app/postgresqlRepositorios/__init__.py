@@ -1,4 +1,6 @@
-from app.postgresqlRepositorios.PontoTuristicoRepositorio import PontoTuristicoRepositorio
+from app.postgresqlRepositorios.PontoTuristicoRepositorio import (
+    PontoTuristicoRepositorio,
+)
 
 
 __all__ = ['PontoTuristicoRepositorio']
