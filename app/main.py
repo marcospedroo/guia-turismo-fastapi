@@ -18,10 +18,6 @@ ponto_turistico_rotas = PontoTuristicoRotas(
 )
 app.include_router(ponto_turistico_rotas.router)
 
-# TODO README
-# TODO DOCKERFILE
-# TODO CONFIGURAR ENV VARS
-# TODO ADD REPOSITÓRIO GITHUB
 
 if __name__ == '__main__':
     uvicorn.run("app.main:app", host='0.0.0.0', port=8000, reload=True)
