@@ -21,7 +21,10 @@ class PontoTuristicoRotas:
     def __init__(self, ponto_turistico_repositorio):
         self.ponto_turistico_repositorio = ponto_turistico_repositorio
         self.router.add_api_route(
-            '/local/{nome_local}', self.get_ponto_turistico, methods=['GET']
+            '/local/{nome_local}',
+            self.get_ponto_turistico,
+            methods=['GET'],
+            response_model_exclude_none=True,
         )
         self.router.add_api_route(
             '/local', self.insert_ponto_turistico, methods=['POST']
@@ -30,7 +33,10 @@ class PontoTuristicoRotas:
             '/local', self.update_ponto_turistico, methods=['PUT']
         )
         self.router.add_api_route(
-            '/locais', self.lista_todos_pontos_turisticos, methods=['GET']
+            '/locais',
+            self.lista_todos_pontos_turisticos,
+            methods=['GET'],
+            response_model_exclude_none=True,
         )
         self.router.add_api_route(
             '/local/{nome_local}',
