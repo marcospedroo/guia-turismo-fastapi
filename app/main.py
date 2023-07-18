@@ -1,12 +1,12 @@
 import uvicorn
 from fastapi import FastAPI
 
-from factories.database import engine
-from postgresqlRepositorios import models
-from postgresqlRepositorios.PontoTuristicoRepositorio import (
+from app.factories.database import engine
+from app.postgresqlRepositorios import models
+from app.postgresqlRepositorios.PontoTuristicoRepositorio import (
     PontoTuristicoRepositorio,
 )
-from rotas.PontoTuristicoRotas import PontoTuristicoRotas
+from app.rotas.PontoTuristicoRotas import PontoTuristicoRotas
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -24,4 +24,4 @@ app.include_router(ponto_turistico_rotas.router)
 # TODO ADD REPOSITÓRIO GITHUB
 
 if __name__ == '__main__':
-    uvicorn.run("main:app", host='0.0.0.0', port=8000, reload=True)
+    uvicorn.run("app.main:app", host='0.0.0.0', port=8000, reload=True)

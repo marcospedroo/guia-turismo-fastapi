@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from modelos.PontoTuristico import PontoTuristico
+from app.modelos.PontoTuristico import PontoTuristico
 
 
 class PontoTuristicoRepositorio:

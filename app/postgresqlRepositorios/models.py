@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, Float
-from factories.database import Base
+from app.factories.database import Base
 
 
 class PontoTuristico(Base):
