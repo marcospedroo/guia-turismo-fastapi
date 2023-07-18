@@ -39,18 +39,25 @@ class PontoTuristicoRepositorio(base_repositorio):
         self, db: Session, ponto_turistico: PontoTuristico
     ):
         try:
+            ponto_turistico_dict = ponto_turistico.dict()
+            ponto_turistico_dict_clean = {}
+            for k, v in ponto_turistico_dict.items():
+                if ponto_turistico_dict[k]:
+                    ponto_turistico_dict_clean[k] = v
+
             query = (
                 update(models.PontoTuristico)
                 .where(models.PontoTuristico.nome == ponto_turistico.nome)
-                .values(**ponto_turistico.dict())
+                .values(**ponto_turistico_dict_clean)
             )
+
             db.execute(query)
             db.commit()
         except IntegrityError:
             raise HTTPException(
                 status_code=400, detail='Erro ao atualizar registro'
             )
-        return ponto_turistico
+        return ponto_turistico_dict_clean
 
     def delete_ponto_turistico(self, db: Session, nome_local: str):
         query = delete(models.PontoTuristico).where(
