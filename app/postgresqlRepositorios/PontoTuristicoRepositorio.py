@@ -1,9 +1,9 @@
 from fastapi import HTTPException
 from sqlalchemy.exc import IntegrityError
 
-from app.modelos.PontoTuristico import PontoTuristico
+from app.modelos import PontoTuristico
 from app.postgresqlRepositorios import models
-from app.repositorios.PontoTuristicoRepositorio import (
+from app.repositorios import (
     PontoTuristicoRepositorio as base_repositorio,
 )
 from sqlalchemy.orm import Session

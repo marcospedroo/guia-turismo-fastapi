@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.factories.database import SessionLocal
-from app.modelos.PontoTuristico import PontoTuristico
-from app.repositorios.PontoTuristicoRepositorio import PontoTuristicoRepositorio
+from app.modelos import PontoTuristico
+from app.repositorios import PontoTuristicoRepositorio
 
 
 def get_db():

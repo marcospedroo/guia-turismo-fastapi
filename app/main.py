@@ -3,10 +3,10 @@ from fastapi import FastAPI
 
 from app.factories.database import engine
 from app.postgresqlRepositorios import models
-from app.postgresqlRepositorios.PontoTuristicoRepositorio import (
+from app.postgresqlRepositorios import (
     PontoTuristicoRepositorio,
 )
-from app.rotas.PontoTuristicoRotas import PontoTuristicoRotas
+from app.rotas import PontoTuristicoRotas
 
 models.Base.metadata.create_all(bind=engine)
 
